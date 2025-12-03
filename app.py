@@ -17,7 +17,7 @@ conf_threshold = st.sidebar.slider("Confidence Threshold", 0.0, 1.0, 0.25, 0.05)
 def load_model():
     # REPLACE this path with your actual 'best.pt' path
     # If running locally, put best.pt in the same folder as app.py
-    return YOLO(r"C:\Users\asus\Documents\Code\best.pt")
+    return YOLO("best.pt")
 
 try:
     model = load_model()
@@ -82,4 +82,5 @@ if uploaded_file is not None:
                 st.markdown(f"### Overall Rating: :{color}[{health_status}]")
                 
             else:
+
                 st.success("✅ No defects detected. Road is in good condition.")
